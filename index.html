@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Techno Club </title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+       .image-container {
+            position: relative;
+            width: 700px;
+            height: 450px;
+            background-color: rgba(255,255,255,0)); 
+      	right:90px;
+        }
+
+        .sample-image {
+            position: absolute;
+            top: -550px;
+            left: 50px;
+           width: 1000px;
+            height: 160px;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-image: url("C:\\Users\\saip5\\OneDrive\\Documents\\WhatsApp Image 2023-10-22 at 17.59.33_74419134.jpg");
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+
+        }
+
+        .imgSlider {
+            width: 750px;
+            height: 1500px;
+            margin-top: 350px;
+            background-size: cover;
+            box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
+            animation: changeImage 60s linear infinite;
+        }
+
+        @keyframes changeImage {
+            0% {
+                background-image: url("C:\\Users\\saip5\\OneDrive\\Pictures\\Saved Pictures\\909160991D733CFDB8DC461A86A11661.jpg");
+            }
+            25% {
+                background-image: url("C:\\Users\\saip5\\OneDrive\\Pictures\\Saved Pictures\\IMG_20230813_211035.jpg");
+            }
+            50% {
+                background-image: url("C:\\Users\\saip5\\OneDrive\\Pictures\\Saved Pictures\\PXNBpM5-3732203414.jpg");
+            }
+            75% {
+                background-image: url("C:\\Users\\saip5\\OneDrive\\Pictures\\Saved Pictures\\Screenshot_2023-05-29-21-13-20-640_com.google.android.youtube.jpg");
+            }
+            100% {
+                background-image: url("C:\\Users\\saip5\\OneDrive\\Pictures\\Saved Pictures\\IMG_20220115_112924-01 (1).jpg");
+            }
+        }
+
+        form {
+            width: 400px;
+            height: auto;
+            padding: 60px;
+            border-radius: 50px;
+            background: #D3D3D3;
+            display: none;
+        }
+        input[type="text"],
+        input[type="email"],input[type="tel"] {
+        width: 80%;
+        padding: 10px;
+}     
+	  input[type="tel"]{
+        width:90%
+        padding:10px;
+}
+ 	  input[type="text"],
+       input[type="email"],
+       input[type="tel"],
+       textarea {
+                  width: 100%;
+    			 padding: 10px;
+   			 font-size: 16px; /* Increase the font size to your desired value */
+			}
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .top-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            border: none;
+            border-radius: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #FFEA00;
+            color: #555;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            position: absolute;
+        }
+
+        .button-left {
+            position: absolute;
+		background-color: white; /* Change the button background color to red */
+            color: #FF1493; /* Change the button content color to white */
+            cursor: pointer; /* Add a pointer cursor on hover */
+            top: -250px;
+            left: 600px;
+        }
+
+        .button-right {
+            position: absolute;
+            
+            top: -250px;
+            right: 650px;
+        }
+.tick-mark::before {
+            
+            font-size: 40px;
+            margin-right: 5px;
+        }
+.tick-mark1::before {
+            
+            font-size: 50px;
+            margin-right: 5px;
+        }
+button[type="submit"] {
+    padding: 300px 60px; /* Adjust padding values for desired size */
+    font-size: 58px;
+    font-family: Arial, sans-serif;
+    border: none;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    margin: 5px;
+}
+    #bottom-left-image {
+		height:75px;
+		image: rgba(255, 255, 255, 0.5);
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 998; /* Place it just behind the button */
+        }
+    </style>
+</head>
+<body>
+
+    <img class="top-image" src="C:\Users\saip5\OneDrive\Documents\image-removebg-preview.png" />
+    <div class="imgSlider"></div>
+    <div class="image-container">
+        <img class="sample-image" src="C:\\Users\\saip5\\Downloads\\WhatsApp_Image_2023-10-21_at_17.42.16_20eb1729-removebg-preview.png" alt="Sample Image">
+    </div>
+<img id="bottom-left-image" src="C:\\Users\\saip5\\OneDrive\\Documents\\WhatsApp_Image_2023-10-19_at_17.34.53_6d6c86ef-removebg-preview.png"" alt="Image in bottom left corner">
+    <div class="button-container">
+        <button id="registration-button" class="button-left">Registration</button>
+        <button id="other-button" class="button-right">About Us</button>
+    </div>
+
+    <div id="popup" class="popup-container">
+        <img src="file:///C:/Users/saip5/OneDrive/Documents/WhatsApp%20Image%202023-10-20%20at%2017.44.23_e79b4bb5.jpg" alt="Image" />
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="success-message" class="popup-container">
+        <h2>You are successfully registered! All the best.</h2>
+        <p>Join our WhatsApp group using the following link:</p>
+        <a href="https://chat.whatsapp.com/EHrYXVWaSba6MES18qOU1g" target="_blank">Join WhatsApp Group</a>
+    </div>
+
+    <div id="about-us-popup" class="popup-container">
+        <h2>About Us</h2>
+        <p>
+ 
+         Welcome to the Techno Club, the information technology club of Seshadri Rao Gudlavalleru Engineering College. We are a dedicated group of tech enthusiasts who are passionate about advancing and exploring the world of technology. Our club is renowned for conducting a myriad of technical events, making us a hub for knowledge sharing and technological expertise.
+        </p>
+<p>
+
+                                        At Techno Club, we believe in the power of innovation and how it can shape the future. Our mission is to foster a community of like-minded individuals who share a deep interest in technology and its applications. We take pride in organizing a wide range of technical events that cater to various aspects of the tech world.
+</p>
+<p>
+
+With a commitment to promoting learning and skill development, we provide our members with opportunities to participate in workshops, seminars, and hands-on projects. Whether you're a seasoned tech professional or a newcomer eager to explore the technical realm, Techno Club offers an inclusive platform to connect, learn, and grow.
+</p>
+<p>
+
+Our club is more than just a meeting place for tech enthusiasts; it's a home for those who aspire to stay at the forefront of technological advancements. We encourage collaboration, creativity, and the pursuit of knowledge. Join us on this exciting journey as we unravel the limitless possibilities of technology together.
+
+</p>
+<p>
+                                                            If you're passionate about technology and seek a vibrant community that hosts numerous technical events, Techno Club is the perfect place for you. Together, we'll dive into the world of innovation, challenge the status quo, and create a brighter, tech-savvy future.
+</p>
+<p>
+                                         <h4>Join us at Techno Club, the information technology club of Seshadri Rao Gudlavalleru Engineering College, and be a part of the ever-evolving world of technology!
+
+
+
+       </h4> </p>
+        <button onclick="closeAboutUsPopup()">Close</button>
+    </div>
+
+    <form name="submit-to-google-sheet" onsubmit="return showSuccessMessage()">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+        <label>Roll_no:</label><br>
+        <input type="text" name="Roll no" required><br><br>
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+ 	  <label>Year:(ex: 1st,2nd,3rd,4th)</label><br>
+        <input type="text" name="Year" required><br><br>
+         <br>
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male" required><label>Male</label>
+        <input type="radio" name="gender" value="Female" required><label>Female</label><br><br>
+       
+       <h7>Branch:</h7><br><br>
+        <label>
+            <input type="radio" name="Branch" value="CSE" class="tick-mark"  required>
+            <span class="tick-mark">CSE</span>
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="Branch" value="IT">
+            IT
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="Branch" value="ECE">
+            ECE
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="Branch" value="EEE">
+            EEE
+        </label>
+        <br>
+   	  <label>
+            <input type="radio" name="Branch" value="AIDS">
+            AIDS
+        </label>
+        <br>
+	  <label>
+            <input type="radio" name="Branch" value="AIML">
+            AIML
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="Branch" value="IOT">
+            IOT
+        </label>
+        <br>
+	   <label>
+            <input type="radio" name="Branch" value="MECH">
+            MECH
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="Branch" value="CIVIL">
+           CIVIL
+        </label>
+        <br>
+	  <br>
+	  <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter your mobile number" required>
+        <br>
+        <br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <script>
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+
+        window.onload = function () {
+            showPopup();
+        }
+
+        function showSuccessMessage() {
+            var form = document.querySelector("form[name='submit-to-google-sheet']");
+            form.style.display = "none";
+            var successMessage = document.getElementById("success-message");
+            successMessage.style.display = "block";
+		
+            return false;
+
+        }
+
+        document.getElementById("registration-button").addEventListener("click", function () {
+            var form = document.querySelector("form[name='submit-to-google-sheet']");
+            form.style.display = "block";
+        });
+
+        function showAboutUsPopup() {
+            var aboutUsPopup = document.getElementById("about-us-popup");
+            aboutUsPopup.style.display = "block";
+        }
+
+        function closeAboutUsPopup() {
+            var aboutUsPopup = document.getElementById("about-us-popup");
+            aboutUsPopup.style.display = "none";
+        }
+
+        document.getElementById("other-button").addEventListener("click", function () {
+            showAboutUsPopup();
+        });
+
+    </script>
+</body>
+</html>
